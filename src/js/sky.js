@@ -8,6 +8,15 @@ const starColors = [
 
 const skyLayer = document.getElementById('sky-layer');
 
+// Diagonal directions: top-left→bottom-right, bottom-right→top-left,
+// top-right→bottom-left, bottom-left→top-right
+const diagonals = [
+  { dx: 300, dy: 300, angle: 225 },   // TL → BR
+  { dx: -300, dy: -300, angle: 45 },   // BR → TL
+  { dx: -300, dy: 300, angle: 135 },   // TR → BL
+  { dx: 300, dy: -300, angle: 315 },   // BL → TR
+];
+
 function createStar(container) {
   const star = document.createElement('div');
   const color = starColors[Math.floor(Math.random() * starColors.length)];
@@ -26,16 +35,41 @@ function createShootingStar() {
   const star = document.createElement('div');
   star.className = 'shooting-star';
 
-  const startX = Math.random() * (window.innerWidth * 0.8);
-  const startY = Math.random() * (window.innerHeight * 0.8);
+  const dir = diagonals[Math.floor(Math.random() * diagonals.length)];
+
+  const startX = Math.random() * window.innerWidth;
+  const startY = Math.random() * window.innerHeight;
 
   star.style.left = `${startX}px`;
   star.style.top = `${startY}px`;
 
+  // Rotate the tail to point opposite the travel direction
+  star.style.setProperty('--tail-angle', `${dir.angle}deg`);
+  star.querySelector('::before');
+  star.style.cssText += `left:${startX}px;top:${startY}px;`;
+
+  // Set tail rotation via inline style on a wrapper approach — simpler to just
+  // use a CSS custom property
+  star.style.setProperty('--dx', `${dir.dx}px`);
+  star.style.setProperty('--dy', `${dir.dy}px`);
+
+  // Rotate the ::before pseudo-element via the parent's transform
+  star.style.transform = `rotate(${dir.angle}deg)`;
+
   skyLayer.appendChild(star);
 
+  const duration = 1.2 + Math.random() * 0.5;
+
   requestAnimationFrame(() => {
-    star.style.animation = `shootingStar ${1.2 + Math.random() * 0.5}s cubic-bezier(0.25, 0.1, 0.25, 1) forwards`;
+    star.animate([
+      { transform: `rotate(${dir.angle}deg) translate(0, 0)`, opacity: 1 },
+      { opacity: 1, offset: 0.2 },
+      { transform: `rotate(${dir.angle}deg) translate(300px, 0)`, opacity: 0 }
+    ], {
+      duration: duration * 1000,
+      easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+      fill: 'forwards'
+    });
   });
 
   setTimeout(() => star.remove(), 2000);
