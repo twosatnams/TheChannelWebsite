@@ -10,7 +10,6 @@ if (menuToggle && siteNav) {
     document.body.style.overflow = isOpen ? '' : 'hidden';
   });
 
-  // Close menu when a link is clicked
   siteNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.setAttribute('aria-expanded', 'false');
@@ -39,19 +38,15 @@ if (revealElements.length > 0) {
   revealElements.forEach(el => observer.observe(el));
 }
 
-// Header background on scroll
+// Header glass effect on scroll
 const header = document.querySelector('.site-header');
 
 if (header) {
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 10) {
-      header.style.borderBottomColor = 'var(--color-border)';
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
     } else {
-      header.style.borderBottomColor = 'var(--color-border-light)';
+      header.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
   }, { passive: true });
 }

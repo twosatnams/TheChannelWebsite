@@ -20,28 +20,11 @@
 }
 
 .section-subtle {
-  background: var(--color-bg-subtle);
+  background: var(--color-section-subtle);
 }
 
 .section-muted {
-  background: var(--color-bg-muted);
-}
-
-.section-dark {
-  background: var(--gradient-dark);
-  color: var(--color-text-on-dark);
-}
-
-.section-dark h1,
-.section-dark h2,
-.section-dark h3,
-.section-dark h4 {
-  color: var(--color-text-on-dark);
-}
-
-.section-dark p,
-.section-dark li {
-  color: var(--color-text-on-dark-muted);
+  background: var(--color-section-muted);
 }
 
 /* Section Headers */
@@ -59,8 +42,8 @@
 .section-label {
   display: inline-block;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
   margin-bottom: var(--space-3);
