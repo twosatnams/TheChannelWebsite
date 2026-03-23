@@ -1,0 +1,17 @@
+{
+  "title": "The Channel",
+  "description": "The AI that truly knows you. Meet Julie — your personal relationship advisor who understands you, knows your people, and helps you show up better for the ones who matter.",
+  "url": "https://thechannel.live",
+  "appUrl": "https://app.thechannel.live",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=live.thechannel.app.production",
+  "email": "info@thechannel.live",
+  "instagram": "https://www.instagram.com/thechannel_live",
+  "tiktok": "https://www.tiktok.com/@thechannel.live",
+  "footerLinks": [
+    { "title": "About", "url": "/about/" },
+    { "title": "FAQ", "url": "/faq/" },
+    { "title": "Terms", "url": "/terms/" },
+    { "title": "Privacy", "url": "/privacy/" },
+    { "title": "Contact", "url": "/contact/" }
+  ]
+}
