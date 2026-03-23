@@ -10,9 +10,21 @@ layout: layouts/base.njk
             The AI that<br><span class="hero-gradient-text">truly knows you</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">Meet Julie — your personal relationship advisor who learns who you are, understands your people, and helps you show up better for the ones who matter.</p>
-        <div class="hero-actions reveal reveal-delay-3">
-            <a href="{{ site.appUrl }}" class="btn btn-primary btn-lg" target="_blank">Get Started Free</a>
-            <a href="#features" class="btn btn-secondary btn-lg">See How It Works</a>
+        <div class="store-buttons reveal reveal-delay-3">
+            <a href="{{ site.playStoreUrl }}" class="store-button" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.5 12l2.198-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                <div>
+                    <span class="store-label">Get it on</span>
+                    <span class="store-name">Google Play</span>
+                </div>
+            </a>
+            <a href="#" class="store-button" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-label">Download on the</span>
+                    <span class="store-name">App Store</span>
+                </div>
+            </a>
         </div>
     </div>
 </section>
@@ -41,34 +53,77 @@ layout: layouts/base.njk
             <span class="section-label reveal">Features</span>
             <h2 class="reveal reveal-delay-1">Everything you need to understand yourself and your people</h2>
         </div>
-        <div class="grid grid-4">
-            <div class="feature-card reveal">
-                <div class="feature-icon feature-icon-purple">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div class="features-phones">
+            {# Chat with Julie #}
+            <div class="feature-phone-item reveal">
+                <div class="phone-container">
+                    <div class="phone-frame">
+                        <div class="screen">
+                            {# Replace placeholder with: <img src="/assets/screenshot-chat.png" alt="Chat with Julie" class="screenshot"> #}
+                            <div class="screen-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                <span>Screenshot</span>
+                            </div>
+                        </div>
+                        <div class="button-right"></div>
+                        <div class="buttons-left">
+                            <div class="button-left"></div>
+                            <div class="button-left"></div>
+                        </div>
+                    </div>
                 </div>
-                <h3>Know Yourself</h3>
-                <p>AI-generated insights about your patterns, tendencies, and blind spots — built from real conversations, not quizzes.</p>
+                <div class="feature-phone-label">
+                    <h3>Talk to Julie</h3>
+                    <p>A conversation that feels like talking to someone who truly sees you. She listens, remembers, and responds with real insight.</p>
+                </div>
             </div>
-            <div class="feature-card reveal reveal-delay-1">
-                <div class="feature-icon feature-icon-pink">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+
+            {# Insights #}
+            <div class="feature-phone-item reveal reveal-delay-1">
+                <div class="phone-container">
+                    <div class="phone-frame">
+                        <div class="screen">
+                            {# Replace placeholder with: <img src="/assets/screenshot-insights.png" alt="Your Insights" class="screenshot"> #}
+                            <div class="screen-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+                                <span>Screenshot</span>
+                            </div>
+                        </div>
+                        <div class="button-right"></div>
+                        <div class="buttons-left">
+                            <div class="button-left"></div>
+                            <div class="button-left"></div>
+                        </div>
+                    </div>
                 </div>
-                <h3>Your Circle</h3>
-                <p>Deep relationship intelligence for the people who matter most. Understand how you connect, where things get stuck, and what to do about it.</p>
+                <div class="feature-phone-label">
+                    <h3>Insights That Grow</h3>
+                    <p>Every conversation becomes a living record. Patterns you'd never see on your own, surfaced automatically.</p>
+                </div>
             </div>
-            <div class="feature-card reveal reveal-delay-2">
-                <div class="feature-icon feature-icon-blue">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+
+            {# Person Page #}
+            <div class="feature-phone-item reveal reveal-delay-2">
+                <div class="phone-container">
+                    <div class="phone-frame">
+                        <div class="screen">
+                            {# Replace placeholder with: <img src="/assets/screenshot-person.png" alt="Person Page" class="screenshot"> #}
+                            <div class="screen-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <span>Screenshot</span>
+                            </div>
+                        </div>
+                        <div class="button-right"></div>
+                        <div class="buttons-left">
+                            <div class="button-left"></div>
+                            <div class="button-left"></div>
+                        </div>
+                    </div>
                 </div>
-                <h3>The Outlook</h3>
-                <p>A living read on your energy and relationships right now. Know when to push forward, when to pause, and when to have the hard conversation.</p>
-            </div>
-            <div class="feature-card reveal reveal-delay-3">
-                <div class="feature-icon feature-icon-green">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <div class="feature-phone-label">
+                    <h3>Know Your People</h3>
+                    <p>A living page for each person in your life. Understand how you connect, where things get stuck, and what to do about it.</p>
                 </div>
-                <h3>Memory That Grows</h3>
-                <p>Every conversation makes Julie smarter about you. Your insights get richer, your pages fill up, and the advice gets sharper — automatically.</p>
             </div>
         </div>
     </div>
@@ -115,12 +170,25 @@ layout: layouts/base.njk
 </section>
 
 {# CTA #}
-<section class="cta-section">
+<section class="cta-section" id="download">
     <div class="container">
         <h2 class="reveal">Your relationships deserve<br>better than guesswork</h2>
         <p class="reveal reveal-delay-1">Start a conversation with Julie today.</p>
-        <div class="reveal reveal-delay-2">
-            <a href="{{ site.appUrl }}" class="btn btn-on-dark btn-lg" target="_blank">Get Started Free</a>
+        <div class="store-buttons reveal reveal-delay-2">
+            <a href="{{ site.playStoreUrl }}" class="store-button" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.5 12l2.198-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                <div>
+                    <span class="store-label">Get it on</span>
+                    <span class="store-name">Google Play</span>
+                </div>
+            </a>
+            <a href="#" class="store-button" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-label">Download on the</span>
+                    <span class="store-name">App Store</span>
+                </div>
+            </a>
         </div>
     </div>
 </section>

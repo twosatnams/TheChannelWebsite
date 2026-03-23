@@ -19,6 +19,10 @@
   max-width: 780px;
 }
 
+.hero .badge {
+  margin-bottom: var(--space-8);
+}
+
 .hero h1 {
   margin-bottom: var(--space-6);
 }
