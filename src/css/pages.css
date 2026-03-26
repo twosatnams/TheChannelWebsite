@@ -227,8 +227,36 @@
 
 .story-illustration img {
   width: 100%;
-  max-width: 360px;
-  border-radius: var(--radius-2xl);
+  max-width: 380px;
+  border-radius: 60% 40% 50% 45% / 45% 55% 40% 55%;
+  box-shadow: 0 8px 40px rgba(147, 112, 219, 0.2),
+              0 0 80px rgba(232, 67, 147, 0.08);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.story-scene:nth-child(1) .story-illustration img {
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  transform: rotate(-2deg);
+}
+
+.story-scene:nth-child(2) .story-illustration img {
+  border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+  transform: rotate(2deg);
+}
+
+.story-scene:nth-child(3) .story-illustration img {
+  border-radius: 50% 45% 55% 40% / 40% 60% 45% 55%;
+  transform: rotate(-1.5deg);
+}
+
+.story-scene:nth-child(4) .story-illustration img {
+  border-radius: 40% 55% 45% 60% / 60% 40% 55% 45%;
+  transform: rotate(1.5deg);
+}
+
+.story-illustration img:hover {
+  transform: rotate(0deg) scale(1.03);
 }
 
 .story-text h3 {
