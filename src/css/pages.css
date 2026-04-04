@@ -48,6 +48,16 @@
   background-clip: text;
 }
 
+.hero-coming-soon,
+.cta-coming-soon {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: var(--space-8);
+}
+
 .hero-subtitle {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
