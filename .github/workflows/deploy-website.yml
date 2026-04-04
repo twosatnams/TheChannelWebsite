@@ -12,7 +12,7 @@ permissions:
 
 env:
   AZURE_RESOURCE_GROUP: thechannel-common-group
-  AZURE_LOCATION: westus2
+  AZURE_LOCATION: centralus
   STATIC_WEB_APP_NAME: thechannel-website
 
 jobs:
