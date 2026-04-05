@@ -11,19 +11,18 @@
   width: 100%;
   max-width: 18rem;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 36px;
+  background: #1a1a1a;
+  border-radius: 24px;
   padding: 4px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   aspect-ratio: 9 / 19;
 }
 
 .screen {
   height: 100%;
   width: 100%;
-  border-radius: 33px;
+  border-radius: 21px;
   overflow: hidden;
   position: relative;
   background: linear-gradient(160deg, #1a1745 0%, #0f0d2e 100%);
@@ -69,7 +68,7 @@
   top: 100px;
   width: 3px;
   height: 30px;
-  background: rgba(255, 255, 255, 0.12);
+  background: #1a1a1a;
   border-radius: var(--radius-sm);
 }
 
@@ -85,7 +84,7 @@
 .button-left {
   width: 3px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.12);
+  background: #1a1a1a;
   border-radius: var(--radius-sm);
 }
 
