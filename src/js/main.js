@@ -1,21 +1,27 @@
 // Mobile menu toggle
 const menuToggle = document.querySelector('.mobile-menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+const mobileNav = document.querySelector('.mobile-nav-overlay');
 
-if (menuToggle && siteNav) {
+if (menuToggle && mobileNav) {
+  const closeMenu = () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  };
+
   menuToggle.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !isOpen);
-    siteNav.classList.toggle('open');
-    document.body.style.overflow = isOpen ? '' : 'hidden';
+    if (isOpen) {
+      closeMenu();
+    } else {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+    }
   });
 
-  siteNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      siteNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 }
 

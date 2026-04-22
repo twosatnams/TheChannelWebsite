@@ -48,14 +48,24 @@
   background-clip: text;
 }
 
-.hero-coming-soon,
-.cta-coming-soon {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-primary-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.journey-button {
+  display: inline-block;
   margin-top: var(--space-8);
+  padding: var(--space-4) var(--space-10);
+  background: var(--gradient-primary);
+  color: white !important;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.journey-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.5);
+  color: white !important;
 }
 
 .hero-subtitle {
