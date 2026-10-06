@@ -7,68 +7,43 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
+  pages: write
+  id-token: write
 
-env:
-  AZURE_RESOURCE_GROUP: thechannel-common-group
-  AZURE_LOCATION: centralus
-  STATIC_WEB_APP_NAME: thechannel-website
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build Site
-        run: npx @11ty/eleventy
+      - name: Build site
+        run: npm run build
 
-      - name: Azure Login
-        uses: azure/login@v2
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          path: _site
 
-      - name: Create Resource Group
-        run: |
-          az group create \
-            --name ${{ env.AZURE_RESOURCE_GROUP }} \
-            --location ${{ env.AZURE_LOCATION }}
-
-      - name: Create Static Web App
-        run: |
-          az staticwebapp create \
-            --name ${{ env.STATIC_WEB_APP_NAME }} \
-            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
-            --location ${{ env.AZURE_LOCATION }} \
-            --sku Free \
-            2>/dev/null || echo "Static Web App already exists"
-
-      - name: Get Deployment Token
-        run: |
-          TOKEN=$(az staticwebapp secrets list \
-            --name ${{ env.STATIC_WEB_APP_NAME }} \
-            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
-            --query "properties.apiKey" \
-            --output tsv)
-          echo "DEPLOYMENT_TOKEN=$TOKEN" >> $GITHUB_ENV
-
-      - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ env.DEPLOYMENT_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: upload
-          app_location: _site
-          skip_app_build: true
-          skip_api_build: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
