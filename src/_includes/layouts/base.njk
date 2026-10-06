@@ -12,15 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/variables.css">
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/sky.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/phone.css">
-    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="{{ '/css/variables.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/base.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/sky.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/layout.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/components.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/phone.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/pages.css' | url }}">
 
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | url }}">
 </head>
 <body>
     <div class="sky-layer" id="sky-layer"></div>
@@ -35,7 +35,7 @@
         {% include "footer.njk" %}
     </div>
 
-    <script src="/js/sky.js"></script>
-    <script src="/js/main.js" defer></script>
+    <script src="{{ '/js/sky.js' | url }}"></script>
+    <script src="{{ '/js/main.js' | url }}" defer></script>
 </body>
 </html>

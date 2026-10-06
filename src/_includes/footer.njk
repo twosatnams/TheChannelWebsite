@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="/" class="logo">The Channel</a>
+                <a href="{{ '/' | url }}" class="logo">The Channel</a>
                 <p class="footer-tagline">The AI that truly knows you.</p>
                 <div class="footer-social">
                     <a href="{{ site.instagram }}" target="_blank" aria-label="Instagram">
@@ -15,19 +15,19 @@
             </div>
             <div class="footer-links">
                 <h4>Product</h4>
-                <a href="/#features">Features</a>
-                <a href="/#how-it-works">How It Works</a>
-                <a href="/faq/">FAQ</a>
+                <a href="{{ '/#features' | url }}">Features</a>
+                <a href="{{ '/#how-it-works' | url }}">How It Works</a>
+                <a href="{{ '/faq/' | url }}">FAQ</a>
             </div>
             <div class="footer-links">
                 <h4>Company</h4>
-                <a href="/about/">About Us</a>
-                <a href="/contact/">Contact</a>
+                <a href="{{ '/about/' | url }}">About Us</a>
+                <a href="{{ '/contact/' | url }}">Contact</a>
             </div>
             <div class="footer-links">
                 <h4>Legal</h4>
-                <a href="/terms/">Terms & Conditions</a>
-                <a href="/privacy/">Privacy Policy</a>
+                <a href="{{ '/terms/' | url }}">Terms & Conditions</a>
+                <a href="{{ '/privacy/' | url }}">Privacy Policy</a>
             </div>
         </div>
         <div class="footer-bottom">
