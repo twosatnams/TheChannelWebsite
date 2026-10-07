@@ -3,17 +3,18 @@ layout: layouts/base.njk
 title: Contact
 ---
 
-<section class="content-section">
-    <div class="container content-body text-center">
-        <h1>Get in Touch</h1>
-        <p>Questions, feedback, or partnership inquiries — we'd love to hear from you.</p>
-
-        <div class="contact-grid">
-            <div class="contact-method">
-                <h3>Email</h3>
-                <p>Reach out to us directly:</p>
-                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+<section class="contact-page">
+    <div class="container">
+        <article class="contact-note" aria-labelledby="contact-heading">
+            <p class="contact-eyebrow">A note from Satnam &amp; Julie</p>
+            <h1 id="contact-heading">Let’s talk.</h1>
+            <p class="contact-intro">We’re Satnam and Julie, the cofounders of The Channel.</p>
+            <p>If something here sparked an idea—or you’d like to talk about the project, a collaboration, or an acquisition—we’d love to hear from you.</p>
+            <div class="contact-actions">
+                <a href="{{ site.satnamLinkedIn }}" class="btn btn-primary contact-primary">Satnam on LinkedIn</a>
+                <a href="{{ site.julieLinkedIn }}" class="btn btn-primary contact-primary">Julie on LinkedIn</a>
             </div>
-        </div>
+            <p class="contact-story"><a href="{{ '/about/' | url }}" class="contact-secondary">Meet the cofounders</a></p>
+        </article>
     </div>
 </section>
